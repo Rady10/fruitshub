@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fruitshub/core/themes/pallete.dart';
+import 'package:fruitshub/core/themes/text_styles.dart';
 import 'package:fruitshub/core/utils/assets.dart';
 import 'package:fruitshub/features/on_boarding/presentation/views/widgets/page_view_item.dart';
 
@@ -13,7 +15,7 @@ class OnBoardingPageView extends StatelessWidget {
     return PageView(
       controller: pageController,
       children: [
-        const PageViewItem(
+        PageViewItem(
           isVisiable: true,
           image: Assets.imagesPageViewItem1Image, 
           backgroundImage: Assets.imagesPageViewItem1BackgroundImage, 
@@ -21,9 +23,22 @@ class OnBoardingPageView extends StatelessWidget {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('مرحبًا بك في'),
-              Text('HUB'),
-              Text('Fruit'),
+              const Text(
+                'مرحبًا بك في',
+                style: TextStyles.bold23,
+              ),
+              Text(
+                ' HUB',
+                style: TextStyles.bold23.copyWith(
+                  color: Pallete.secondaryColor
+                ),
+              ),
+              Text(
+                'Fruit',
+                style: TextStyles.bold23.copyWith(
+                  color: Pallete.primaryColor
+                ),
+              ),
             ],
           )
         ),
@@ -35,13 +50,7 @@ class OnBoardingPageView extends StatelessWidget {
           title: Text(
             'ابحث وتسوق',
             textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Color(0xFF0C0D0D),
-              fontSize: 23,
-              fontFamily: 'Cairo',
-              fontWeight: FontWeight.w700,
-              height: 0,
-            ),
+            style: TextStyles.bold23
           ),
         ),
       ],
