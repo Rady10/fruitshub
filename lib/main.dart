@@ -6,7 +6,7 @@ import 'package:fruitshub/features/splash/presentation/views/splash_view.dart';
 import 'package:fruitshub/generated/l10n.dart';
 
 void main() async{
-  await SharedPreferencesSingleton.init();
+  await Prefs.init();
   runApp(const MyApp());
 }
 
