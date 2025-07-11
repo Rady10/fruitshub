@@ -3,11 +3,12 @@ import 'package:fruitshub/core/utils/constants.dart';
 import 'package:svg_flutter/svg.dart';
 
 class PageViewItem extends StatelessWidget {
-  const PageViewItem({super.key, required this.image, required this.backgroundImage, required this.subtitle, required this.title});
+  const PageViewItem({super.key, required this.image, required this.backgroundImage, required this.subtitle, required this.title, required this.isVisiable});
 
   final String image, backgroundImage;
   final String subtitle;
   final Widget title;
+  final bool isVisiable;
 
 
   @override
@@ -31,10 +32,13 @@ class PageViewItem extends StatelessWidget {
                 bottom: 0,
                 child: SvgPicture.asset(image)
               ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Text(
-                  'تخط',
+              Visibility(
+                visible: isVisiable,
+                child: const Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Text(
+                    'تخط',
+                  ),
                 ),
               ),
             ],
