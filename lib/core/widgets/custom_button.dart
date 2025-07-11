@@ -15,7 +15,7 @@ class CustomButton extends StatelessWidget {
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
-          backgroundColor: ColorPallete.primaryColor,
+          backgroundColor: Pallete.primaryColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16)
           ),
