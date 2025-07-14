@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fruitshub/core/themes/text_styles.dart';
-import 'package:fruitshub/core/utils/assets.dart';
 import 'package:svg_flutter/svg.dart';
 
 class SocialButton extends StatelessWidget {

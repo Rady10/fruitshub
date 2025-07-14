@@ -1,11 +1,16 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fruitshub/core/themes/pallete.dart';
 import 'package:fruitshub/core/themes/text_styles.dart';
 
-class DontHaveAccountWidget extends StatelessWidget {
-  const DontHaveAccountWidget({
-    super.key,
+class AuthToggleTextWidget extends StatelessWidget {
+  const AuthToggleTextWidget({
+    super.key, required this.firstText, required this.secondText, required this.onPressed,
   });
+
+  final String firstText;
+  final String secondText;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -13,14 +18,15 @@ class DontHaveAccountWidget extends StatelessWidget {
       text: TextSpan(
         children: [
           TextSpan(
-            text: 'لا تمتلك حساب؟',
+            text: firstText,
             style: TextStyles.semiBold16.copyWith(
               color: const Color(0xff949D9E),
               fontFamily: 'Cairo'
             ),
           ),
           TextSpan(
-            text: '  قم بانشاء حساب',
+            recognizer: TapGestureRecognizer()..onTap = onPressed,
+            text: secondText,
             style: TextStyles.semiBold16.copyWith(
               color: Pallete.primaryColor,
               fontFamily: 'Cairo'

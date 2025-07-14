@@ -5,7 +5,8 @@ import 'package:fruitshub/core/utils/assets.dart';
 import 'package:fruitshub/core/utils/constants.dart';
 import 'package:fruitshub/core/widgets/custom_button.dart';
 import 'package:fruitshub/core/widgets/custom_text_field.dart';
-import 'package:fruitshub/features/auth/presentation/view/widgets/dont_have_account.dart';
+import 'package:fruitshub/features/auth/presentation/view/signup_view.dart';
+import 'package:fruitshub/features/auth/presentation/view/widgets/auth_toggle_widget.dart';
 import 'package:fruitshub/features/auth/presentation/view/widgets/or_divider.dart';
 import 'package:fruitshub/features/auth/presentation/view/widgets/social_button.dart';
 
@@ -51,7 +52,13 @@ class LoginViewBody extends StatelessWidget {
               text: 'تسجيل الدخول'
             ),
             const SizedBox(height: 33,),
-            const DontHaveAccountWidget(),
+            AuthToggleTextWidget(
+              firstText: 'لا تمتلك حساب؟',
+              secondText: '  قم بانشاء حساب',
+              onPressed: (){
+                Navigator.of(context).pushNamed(SignupView.routeName);
+              },
+            ),
             const SizedBox(height: 33,),
             const OrDivider(),
             const SizedBox(height: 16,),
