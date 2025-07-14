@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fruitshub/core/themes/text_styles.dart';
 import 'package:fruitshub/core/widgets/custom_app_bar.dart';
 import 'package:fruitshub/features/auth/presentation/view/widgets/login_view_body.dart';
 
