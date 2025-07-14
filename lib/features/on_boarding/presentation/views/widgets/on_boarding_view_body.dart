@@ -1,5 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:fruitshub/core/services/shared_preferences_singleton.dart';
 import 'package:fruitshub/core/themes/pallete.dart';
 import 'package:fruitshub/core/utils/constants.dart';
 import 'package:fruitshub/core/widgets/custom_button.dart';
@@ -67,6 +68,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             padding: const EdgeInsets.symmetric(horizontal: horizontalPadding),
             child: CustomButton(
               onPressed: (){
+                Prefs.setBool(isOnBoardingView, true);
                 Navigator.pushReplacementNamed(context, LoginView.routeName);
               }, 
               text: "ابدأ الان"

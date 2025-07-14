@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruitshub/core/services/shared_preferences_singleton.dart';
 import 'package:fruitshub/core/themes/pallete.dart';
 import 'package:fruitshub/core/themes/text_styles.dart';
 import 'package:fruitshub/core/utils/constants.dart';
@@ -41,6 +42,7 @@ class PageViewItem extends StatelessWidget {
                   padding: const EdgeInsets.all(16.0),
                   child: GestureDetector(
                     onTap: (){
+                      Prefs.setBool(isOnBoardingView, true);
                       Navigator.pushReplacementNamed(context, LoginView.routeName);
                     },
                     child: Text(
