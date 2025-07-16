@@ -18,7 +18,7 @@ class SignUpViewBlocConsumer extends StatelessWidget {
           buildSnackBar(context, state.message);
         }
         if (state is SignupSuccess){
-          buildSnackBar(context, 'تم إنشاء الحساب بنجاح');
+          buildSnackBar(context, 'تم إنشاء الحساب بنجاح, قم بتسجيل الدخول');
         }
       },
       builder: (context, state) {
