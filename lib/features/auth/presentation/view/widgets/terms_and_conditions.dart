@@ -2,12 +2,13 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fruitshub/core/themes/pallete.dart';
 import 'package:fruitshub/core/themes/text_styles.dart';
-import 'package:fruitshub/core/utils/constants.dart';
 import 'package:fruitshub/features/auth/presentation/view/signup_view.dart';
 import 'package:fruitshub/features/auth/presentation/view/widgets/custom_check_box.dart';
 
 class TermsAndConditions extends StatefulWidget {
-  const TermsAndConditions({super.key});
+  const TermsAndConditions({super.key, required this.onChecked});
+
+  final ValueChanged<bool> onChecked;
 
   @override
   State<TermsAndConditions> createState() => _TermsAndConditionsState();
@@ -25,6 +26,7 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
           isChecked: isTremsAccepted,
           onChecked: (value) {
             setState(() {
+              widget.onChecked(value);
               isTremsAccepted = value;
             });
           },
