@@ -10,7 +10,7 @@ class CustomHomeAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: Container(
-        padding: const EdgeInsets.all(5),
+        padding: const EdgeInsets.all(5.5),
         child: Image.asset(Assets.imagesProfileImage)
       ),
       title: Text(
