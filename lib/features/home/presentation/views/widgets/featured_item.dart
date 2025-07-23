@@ -13,60 +13,63 @@ class FeaturedItem extends StatelessWidget {
 
     var itemWidth = MediaQuery.of(context).size.width;
 
-    return Container(
-      width: itemWidth,
-      child: AspectRatio(
-        aspectRatio: 342/158,
-        child: Stack(
-          clipBehavior: Clip.none,
-          children: [
-            Positioned(
-              left: 0,
-              bottom: 0,
-              top: 0,
-              right: itemWidth * 0.4,
-              child: Image.asset(
-                Assets.imagesWatermelonTest,
-                fit: BoxFit.fill,
-              )
-            ),
-            Container(
-              width: itemWidth * 0.5,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: svg.Svg(Assets.imagesFeaturedItemBackground),
-                  fit: BoxFit.fill
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(4),
+      child: SizedBox(
+        width: itemWidth,
+        child: AspectRatio(
+          aspectRatio: 342/158,
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              Positioned(
+                left: 0,
+                bottom: 0,
+                top: 0,
+                right: itemWidth * 0.4,
+                child: Image.asset(
+                  Assets.imagesWatermelonTest,
+                  fit: BoxFit.fill,
                 )
               ),
-              child: Padding(
-                padding: const EdgeInsets.only(right: 33),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 35,),
-                    Text(
-                      'عروض الصيف',
-                      style: TextStyles.regular13.copyWith(
-                        color: Colors.white
-                      ),
-                    ),
-                    const Spacer(),
-                    Text(
-                      'خصم 25%',
-                      style: TextStyles.bold19.copyWith(
-                        color: Colors.white
-                      ),
-                    ),
-                    const SizedBox(height: 15,),
-                    FeaturedItemButton(
-                      onPressed: (){},
-                    ),
-                    const SizedBox(height: 29,)
-                  ],
+              Container(
+                width: itemWidth * 0.5,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: svg.Svg(Assets.imagesFeaturedItemBackground),
+                    fit: BoxFit.fill
+                  )
                 ),
-              ),
-            )
-          ],
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 33),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 35,),
+                      Text(
+                        'عروض الصيف',
+                        style: TextStyles.regular13.copyWith(
+                          color: Colors.white
+                        ),
+                      ),
+                      const Spacer(),
+                      Text(
+                        'خصم 25%',
+                        style: TextStyles.bold19.copyWith(
+                          color: Colors.white
+                        ),
+                      ),
+                      const SizedBox(height: 15,),
+                      FeaturedItemButton(
+                        onPressed: (){},
+                      ),
+                      const SizedBox(height: 29,)
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
