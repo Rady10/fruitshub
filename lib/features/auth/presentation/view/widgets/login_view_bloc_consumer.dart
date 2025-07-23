@@ -4,6 +4,7 @@ import 'package:fruitshub/core/helpers/build_snack_bar.dart';
 import 'package:fruitshub/core/widgets/custom_progress_hud.dart';
 import 'package:fruitshub/features/auth/presentation/cubits/login_cubit/login_cubit.dart';
 import 'package:fruitshub/features/auth/presentation/view/widgets/login_view_body.dart';
+import 'package:fruitshub/features/home/presentation/views/home_view.dart';
 
 class LoginViewBlocConsumer extends StatelessWidget {
   const LoginViewBlocConsumer({
@@ -18,6 +19,7 @@ class LoginViewBlocConsumer extends StatelessWidget {
           buildSnackBar(context, state.message);
         }
         if (state is LoginSuccess){
+          Navigator.pushNamed(context, HomeView.routeName);
           buildSnackBar(context, 'تم تسجيل الدخول بنجاح');
         }
       },
