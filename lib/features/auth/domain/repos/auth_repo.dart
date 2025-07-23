@@ -12,5 +12,13 @@ abstract class AuthRepo {
     {required String email, required String password}
   );
 
+  Future<Either<Failure, UserEntity>> signInWithGoogle();
+
+  //Facebook Sign in needs Configuration in Firebase Console
+  Future<Either<Failure, UserEntity>> signInWithFacebook();
+
+  Future addUserData({required UserEntity user});
+
+  Future <UserEntity> getUserData({required String uId});
 
 }
