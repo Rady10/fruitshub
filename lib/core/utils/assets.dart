@@ -32,5 +32,6 @@ class Assets {
   static const String imagesVuesaxOutlineShoppingCart = "assets/images/vuesax/outline/shopping-cart.svg";
   static const String imagesVuesaxOutlineUser = "assets/images/vuesax/outline/user.svg";
   static const String imagesWatermelonTest = "assets/images/watermelon_test.png";
+  static const String imagesAppleTest = "assets/images/apple_test.png";
 }
 
