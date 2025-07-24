@@ -16,7 +16,7 @@ class NavigationBarItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedSwitcher(
-      duration: const Duration(milliseconds: 500), // slower
+      duration: const Duration(milliseconds: 250),
       switchInCurve: Curves.easeInOutCubic,
       switchOutCurve: Curves.easeInOutCubic,
       transitionBuilder: (Widget child, Animation<double> animation) {
