@@ -4,19 +4,37 @@ import 'package:fruitshub/features/home/presentation/views/widgets/active_item.d
 import 'package:fruitshub/features/home/presentation/views/widgets/in_active_item.dart';
 
 class NavigationBarItem extends StatelessWidget {
-  const NavigationBarItem({super.key, required this.isSelected, required this.bottomNavBarEntity});
-
   final bool isSelected;
   final BottomNavBarEntity bottomNavBarEntity;
 
+  const NavigationBarItem({
+    super.key,
+    required this.isSelected,
+    required this.bottomNavBarEntity,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return isSelected 
-    ? ActiveItem(
-      text: bottomNavBarEntity.name,
-      image: bottomNavBarEntity.activeImage,
-    )
-    : InActiveItem(image: bottomNavBarEntity.inActiveImage);
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 500), // slower
+      switchInCurve: Curves.easeInOutCubic,
+      switchOutCurve: Curves.easeInOutCubic,
+      transitionBuilder: (Widget child, Animation<double> animation) {
+        return ScaleTransition(
+          scale: animation,
+          child: child,
+        );
+      },
+      child: isSelected
+          ? ActiveItem(
+              key: const ValueKey('active'),
+              text: bottomNavBarEntity.name,
+              image: bottomNavBarEntity.activeImage,
+            )
+          : InActiveItem(
+              key: const ValueKey('inactive'),
+              image: bottomNavBarEntity.inActiveImage,
+            ),
+    );
   }
 }

@@ -13,12 +13,12 @@ class ActiveItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        padding: const EdgeInsets.only(left: 16),
+        padding: const EdgeInsets.only(left: 12, right: 8),
         decoration: ShapeDecoration(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           ),
-          color: const Color(0xffeeeeee)
+          color: const Color(0xffeeeeee),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -30,17 +30,21 @@ class ActiveItem extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
-                color: Pallete.primaryColor
+                color: Pallete.primaryColor,
               ),
               child: Center(child: SvgPicture.asset(image)),
             ),
-            const SizedBox(width: 4,),
-            Text(
-              text,
-              style: TextStyles.semiBold11.copyWith(
-                color: Pallete.primaryColor
+            const SizedBox(width: 6),
+            Flexible( // This prevents overflow
+              child: Text(
+                text,
+                style: TextStyles.semiBold11.copyWith(
+                  color: Pallete.primaryColor,
+                ),
+                overflow: TextOverflow.ellipsis,
+                softWrap: false,
               ),
-            )
+            ),
           ],
         ),
       ),
